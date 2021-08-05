@@ -1,7 +1,7 @@
 ---
-name: Coding Like Vincent Van Gogh
-tools: [Support, Author, VVG]
-image:
-description: Show some support by following me!
+name: Seasons of Code
+tools: 
+image: https://www.sketchappsources.com/resources/source-image/movie-badges-jurajjurik.png
+description: 
 external_url: https://github.com/YoussefRaafatNasry
 ---

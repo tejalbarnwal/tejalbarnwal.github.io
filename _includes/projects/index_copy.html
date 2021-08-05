@@ -1,0 +1,67 @@
+
+<style>
+  .row{
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+</style>
+
+<div class="row row-cols-1 row-cols-md-3 g-3">
+
+  {% for project in site.compprojects %}
+
+    
+    <div class="col">
+
+      {%- assign project_type  = "local" -%}
+      {%- assign project_id    = project.name | slugify -%}
+      {%- assign project_img   = project.image -%}
+      {%- assign project_name  = project.name -%}
+      {%- assign project_desc  = project.description -%}
+      {%- assign project_tools = project.tools -%}
+
+      {%- if project.external_url -%}
+        {%- assign project_url = project.external_url -%}
+      {%- else -%}
+        {%- assign project_url = project.url | relative_url -%}
+      {%- endif -%}
+
+      {% include projects/project-card.html %}
+
+    </div>
+
+
+
+  {% endfor %}
+
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-3">
+
+  {% for project in site.projects %}
+
+    
+    <div class="col">
+
+      {%- assign project_type  = "local" -%}
+      {%- assign project_id    = project.name | slugify -%}
+      {%- assign project_img   = project.image -%}
+      {%- assign project_name  = project.name -%}
+      {%- assign project_desc  = project.description -%}
+      {%- assign project_tools = project.tools -%}
+
+      {%- if project.external_url -%}
+        {%- assign project_url = project.external_url -%}
+      {%- else -%}
+        {%- assign project_url = project.url | relative_url -%}
+      {%- endif -%}
+
+      {% include projects/project-card.html %}
+
+    </div>
+
+
+
+  {% endfor %}
+
+</div>
