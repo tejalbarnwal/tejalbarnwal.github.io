@@ -5,7 +5,8 @@ permalink: /about/
 weight: 1
 ---
 
-# **About Me**
+<!-- # **About Me** -->
+<h1 style="text-align: center;"><b>About Me</b></h1>
 
 <img style="float: right;" src="../imgs/me1.jpg" alt="Kitten" title="A cute kitten" width="300" height="200" />
      

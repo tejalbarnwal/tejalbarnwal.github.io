@@ -1,48 +1,19 @@
-<!DOCTYPE html>
+---
+layout: default
+title: Fine Arts
+weight: 4
+permalink: /art/
+---
 
-<!--
-  portfolYOU Jekyll theme by Youssef Raafat
-  Free for personal and commercial use under the MIT license
-  https://github.com/YoussefRaafatNasry/portfolYOU
--->
+<br>
 
-<html lang="en" class="h-100">
+<h1 style="text-align: center;"><b>ArtWorks!</b></h1>
 
-<!--{% include head.html %}-->
-<!-- INSTEAD OF INCLUDING HEAD.HTML I COPIED AND PASTED HERE BECAUSE SOME CHANGES ARE ALSO MADE HERE-->
-{% include head.html %}
+<p style="text-align: center;">I seldomely like to try painting, quilling, or sketching! Here are some of my artworks..</p>
 
-
-<!-- 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-
-
-
-
-
-<body class="h-100 d-flex flex-column">
-
-  <main class="flex-shrink-0 container mt-5">
-    {% include navbar.html %}
-    {{ content }}
-  </main>
-  <!--I START HERE AND END JUST BEFORE FOOTER
-     <div class="ml-1000 mr-1000" style="background-color: #ddd;"><h4>1</h4></div>
-
-        <div class="item">
-          <img src="../imgs/owl1.jpg" alt="Owl Image"/>
-        </div>
-  
-  -->
-  <style>
+<style>
     #owl-demo{
       margin-top: 50px;
-
-
-      padding-left: 20%;
-      padding-right: 20%;
     }
     #owl-demo .item{
       border: 1px solid black;
@@ -132,14 +103,3 @@
   })
   </script>
 
-
-
-
-  {% include footer.html %}
-
-  {% include analytics.html %}
-  {% include scripts.html %}
-
-</body>
-
-</html>
