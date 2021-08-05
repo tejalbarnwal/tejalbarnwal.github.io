@@ -5,60 +5,254 @@
     padding-right: 10%;
   }
 </style>
+<br>
 
-<div class="row row-cols-1 row-cols-md-3 g-3">
+<h2>Competitions</h2>
 
-  {% for project in site.compprojects %}
+<br>
 
-    
-    <div class="col">
+<!-- 
+<h1 style="text-align: center;"><b>Projects</b></h1>
 
-      {%- assign project_type  = "local" -%}
-      {%- assign project_id    = project.name | slugify -%}
-      {%- assign project_img   = project.image -%}
-      {%- assign project_name  = project.name -%}
-      {%- assign project_desc  = project.description -%}
-      {%- assign project_tools = project.tools -%}
+<hr style="height:1px;width:78%;color:gray;background-color:gray;opacity: 0.15;"> -->
 
-      {%- if project.external_url -%}
-        {%- assign project_url = project.external_url -%}
-      {%- else -%}
-        {%- assign project_url = project.url | relative_url -%}
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  {% for project in site.projects %}
+<!--########################    FIRST   ################################################################-->
+      {%- if project.number == "one"  -%}
+        <div class="col">
+          
+            {%- assign project_type  = "local" -%}
+            {%- assign project_id    = project.name | slugify -%}
+            {%- assign project_img   = project.image -%}
+            {%- assign project_name  = project.name -%}
+            {%- assign project_desc  = project.description -%}
+            {%- assign project_tools = project.tools -%}
+
+            {%- if project.external_url -%}
+              {%- assign project_url = project.external_url -%}
+            {%- else -%}
+              {%- assign project_url = project.url | relative_url -%}
+            {%- endif -%}
+
+            {% include projects/project-card.html %}
+        </div>
+      {%- endif -%}
+<!--###########################   SECOND   ###########################################################-->
+      {%- if project.number == "two"  -%}
+        <div class="col">
+          
+            {%- assign project_type  = "local" -%}
+            {%- assign project_id    = project.name | slugify -%}
+            {%- assign project_img   = project.image -%}
+            {%- assign project_name  = project.name -%}
+            {%- assign project_desc  = project.description -%}
+            {%- assign project_tools = project.tools -%}
+
+            {%- if project.external_url -%}
+              {%- assign project_url = project.external_url -%}
+            {%- else -%}
+              {%- assign project_url = project.url | relative_url -%}
+            {%- endif -%}
+
+            {% include projects/project-card.html %}
+        </div>
       {%- endif -%}
 
-      {% include projects/project-card.html %}
+<!--#########################  THIRD   ##################################################################-->
+      {%- if project.number == "three"  -%}
+        <div class="col">
+          
+            {%- assign project_type  = "local" -%}
+            {%- assign project_id    = project.name | slugify -%}
+            {%- assign project_img   = project.image -%}
+            {%- assign project_name  = project.name -%}
+            {%- assign project_desc  = project.description -%}
+            {%- assign project_tools = project.tools -%}
 
-    </div>
+            {%- if project.external_url -%}
+              {%- assign project_url = project.external_url -%}
+            {%- else -%}
+              {%- assign project_url = project.url | relative_url -%}
+            {%- endif -%}
 
-
+            {% include projects/project-card.html %}
+        </div>
+      {%- endif -%}
 
   {% endfor %}
-
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-3">
+<br>
+
+<h2>Key Projects</h2>
+
+<br>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  
 
   {% for project in site.projects %}
 
-    
-    <div class="col">
+<!--##############################  FOURTH   ###########################################################-->
+      {%- if project.number == "four"  -%}
+        <div class="col">
+          
+            {%- assign project_type  = "local" -%}
+            {%- assign project_id    = project.name | slugify -%}
+            {%- assign project_img   = project.image -%}
+            {%- assign project_name  = project.name -%}
+            {%- assign project_desc  = project.description -%}
+            {%- assign project_tools = project.tools -%}
 
-      {%- assign project_type  = "local" -%}
-      {%- assign project_id    = project.name | slugify -%}
-      {%- assign project_img   = project.image -%}
-      {%- assign project_name  = project.name -%}
-      {%- assign project_desc  = project.description -%}
-      {%- assign project_tools = project.tools -%}
+            {%- if project.external_url -%}
+              {%- assign project_url = project.external_url -%}
+            {%- else -%}
+              {%- assign project_url = project.url | relative_url -%}
+            {%- endif -%}
 
-      {%- if project.external_url -%}
-        {%- assign project_url = project.external_url -%}
-      {%- else -%}
-        {%- assign project_url = project.url | relative_url -%}
+            {% include projects/project-card.html %}
+        </div>
       {%- endif -%}
 
-      {% include projects/project-card.html %}
+<!--############################   FIFTH   ##################################################################-->
+      {%- if project.number == "five"  -%}
+        <div class="col">
+          
+            {%- assign project_type  = "local" -%}
+            {%- assign project_id    = project.name | slugify -%}
+            {%- assign project_img   = project.image -%}
+            {%- assign project_name  = project.name -%}
+            {%- assign project_desc  = project.description -%}
+            {%- assign project_tools = project.tools -%}
 
-    </div>
+            {%- if project.external_url -%}
+              {%- assign project_url = project.external_url -%}
+            {%- else -%}
+              {%- assign project_url = project.url | relative_url -%}
+            {%- endif -%}
+
+            {% include projects/project-card.html %}
+        </div>
+      {%- endif -%}
+
+
+<!--########################   SIXTH   ###############################################################################-->
+      {%- if project.number == "six"  -%}
+        <div class="col">
+          
+            {%- assign project_type  = "local" -%}
+            {%- assign project_id    = project.name | slugify -%}
+            {%- assign project_img   = project.image -%}
+            {%- assign project_name  = project.name -%}
+            {%- assign project_desc  = project.description -%}
+            {%- assign project_tools = project.tools -%}
+
+            {%- if project.external_url -%}
+              {%- assign project_url = project.external_url -%}
+            {%- else -%}
+              {%- assign project_url = project.url | relative_url -%}
+            {%- endif -%}
+
+            {% include projects/project-card.html %}
+        </div>
+      {%- endif -%}
+
+ 
+<!--####################   SEVENTH   ###############################################################################-->
+      <!-- {%- if project.number == "seven"  -%}
+        <div class="col">
+          
+            {%- assign project_type  = "local" -%}
+            {%- assign project_id    = project.name | slugify -%}
+            {%- assign project_img   = project.image -%}
+            {%- assign project_name  = project.name -%}
+            {%- assign project_desc  = project.description -%}
+            {%- assign project_tools = project.tools -%}
+
+            {%- if project.external_url -%}
+              {%- assign project_url = project.external_url -%}
+            {%- else -%}
+              {%- assign project_url = project.url | relative_url -%}
+            {%- endif -%}
+
+            {% include projects/project-card.html %}
+        </div>
+      {%- endif -%} -->
+
+
+
+<!--###################   EIGTH #######################################################################################-->
+      <!-- {%- if project.number == "eight"  -%}
+        <div class="col">
+          
+            {%- assign project_type  = "local" -%}
+            {%- assign project_id    = project.name | slugify -%}
+            {%- assign project_img   = project.image -%}
+            {%- assign project_name  = project.name -%}
+            {%- assign project_desc  = project.description -%}
+            {%- assign project_tools = project.tools -%}
+
+            {%- if project.external_url -%}
+              {%- assign project_url = project.external_url -%}
+            {%- else -%}
+              {%- assign project_url = project.url | relative_url -%}
+            {%- endif -%}
+
+            {% include projects/project-card.html %}
+        </div>
+      {%- endif -%} -->
+
+
+
+
+<!--#########################   NINE  ###############################################################################-->
+      <!-- {%- if project.number == "nine"  -%}
+        <div class="col">
+          
+            {%- assign project_type  = "local" -%}
+            {%- assign project_id    = project.name | slugify -%}
+            {%- assign project_img   = project.image -%}
+            {%- assign project_name  = project.name -%}
+            {%- assign project_desc  = project.description -%}
+            {%- assign project_tools = project.tools -%}
+
+            {%- if project.external_url -%}
+              {%- assign project_url = project.external_url -%}
+            {%- else -%}
+              {%- assign project_url = project.url | relative_url -%}
+            {%- endif -%}
+
+            {% include projects/project-card.html %}
+        </div>
+      {%- endif -%} -->
+
+
+
+
+<!--################################ TENTH ############################################################-->
+      <!-- {%- if project.number == "ten"  -%}
+        <div class="col">
+          
+            {%- assign project_type  = "local" -%}
+            {%- assign project_id    = project.name | slugify -%}
+            {%- assign project_img   = project.image -%}
+            {%- assign project_name  = project.name -%}
+            {%- assign project_desc  = project.description -%}
+            {%- assign project_tools = project.tools -%}
+
+            {%- if project.external_url -%}
+              {%- assign project_url = project.external_url -%}
+            {%- else -%}
+              {%- assign project_url = project.url | relative_url -%}
+            {%- endif -%}
+
+            {% include projects/project-card.html %}
+        </div>
+      {%- endif -%}
+      -->
 
 
 

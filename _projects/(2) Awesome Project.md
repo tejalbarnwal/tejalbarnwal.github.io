@@ -2,7 +2,8 @@
 name: Intelligent Picking Robot
 tools: 
 image: https://www.sketchappsources.com/resources/source-image/movie-badges-jurajjurik.png
-description: 
+description: two
+number: two
 ---
 
 # The Movies Project
