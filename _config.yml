@@ -1,9 +1,10 @@
 ### Site Settings ###
 title               : Tejal Barnwal
 description         : >-
-                      I turn coffee :coffee: into code,
-                      use tabs over spaces
-                      and never broke production.
+                      Main udna chahti hoon, 
+                      daudna chahti hoon, 
+                      girna bhi chahti hoon ... 
+                      bus rukna nahi chahti
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : tejalbarnwal/tejalbarnwal.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : YoussefRaafatNasry/portfolYOU
@@ -96,3 +97,7 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+
+# I turn coffee :coffee: into curosity,
+# use enthusiasm as fuel
+# and never broke production.
