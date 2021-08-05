@@ -9,7 +9,7 @@ permalink: /art/
 
 <h1 style="text-align: center;"><b>ArtWorks!</b></h1>
 
-<p style="text-align: center;">I seldomely like to try painting, quilling, or sketching! Here are some of my artworks..</p>
+<p style="text-align: center;">I often like to try painting, quilling, or sketching! Here are some of my artworks..</p>
 
 <style>
     #owl-demo{
