@@ -22,7 +22,8 @@
 h2 {
   display: flex;
   flex-direction: row;
-  opacity: 0.15
+  opacity: 0.5;
+  color: #007bff
 }
 h2:before, h2:after{
   content: "";
@@ -31,8 +32,8 @@ h2:before, h2:after{
   margin: auto;
   margin-left: 20%;
   margin-right: 20%;
-  color:gray;
-  opacity: 1.0
+  color: #007bff; 
+  opacity: 0.25
 }
 h2:before {
   margin-right: 1%
