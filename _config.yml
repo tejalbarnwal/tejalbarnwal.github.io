@@ -1,10 +1,13 @@
 ### Site Settings ###
 title               : Tejal Barnwal
 description         : >-
-                      Main udna chahti hoon, 
-                      daudna chahti hoon, 
-                      girna bhi chahti hoon ... 
-                      bus rukna nahi chahti
+                      Welcome to my Homepage! <br>
+                      I am Tejal Barnwal <br>
+                      This website is a quick outlet for my thoughts. <br>
+                      You can also read more 
+                      <a href="https://tejalbarnwal.github.io/about/">about me</a> & 
+                      <a href="https://tejalbarnwal.github.io/projects/">key projects</a>.
+
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : tejalbarnwal/tejalbarnwal.github.io    # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : YoussefRaafatNasry/portfolYOU
