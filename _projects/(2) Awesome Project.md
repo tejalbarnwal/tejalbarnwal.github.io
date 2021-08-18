@@ -6,16 +6,19 @@ description: two
 number: two
 ---
 
-# The Movies Project
+# Intelligent Picking Robot - Flipkart Grid 2.0
 
-The Movies Project is something like **Netflix**, the only difference is that **it's not real**! It doesn't exist! I just created it to demonstrate how the **showcase** page looks like and how you can write whatever you want with full markdown support.
+## Abstract
+This problem statement tries to replicate the quintessential warehouse problem of picking in which the participants are supposed to build their own robot hardware and software (collectively, a “Robot”) that is capable of doing general tasks of picking items from a pick area and place them into a cell in th drop/stow area. There are few households objects at a height of 100cm from the ground on a table, which is termed as the pick up area. We have to design a mechanism which can pick up these objects and then put them in a stow area in a particular manner.
 
-![preview](https://www.sketchappsources.com/resources/source-image/we-were-soldiers-landing-page-dbruggisser.jpg)
+## Mechanical
+Cylindrical
+Articulated
+1st iteration
+2nd Iteration
 
-## Search Movies
+## Software Stack
+URDF
+1st iteration
+MoveIt
 
-![search](https://www.sketchappsources.com/resources/source-image/microsoft-windows-10-virtual-keyboard-diogo-sousa.png)
-
-<p class="text-center">
-{% include elements/button.html link="https://github.com/YoussefRaafatNasry/portfolYOU" text="Learn More" %}
-</p>

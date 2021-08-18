@@ -1,5 +1,5 @@
 ---
-name: SeDriCa
+name: Touchless Elevator Control Mimic
 tools: 
 image: https://www.sketchappsources.com/resources/source-image/coo-app-concept-subgaurav.jpg
 description: 
