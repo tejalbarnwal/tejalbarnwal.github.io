@@ -90,7 +90,7 @@
 @keyframes four-anim { 50% { transform: scale(0.98); } }
 html { padding-left: calc(100vw - 100%); }
 
-body { font-family: "Poppins", sans-serif; }
+body { font-family: "Open Sans", sans-serif; }
 
 .badge { font-weight: 500; }
 
@@ -151,14 +151,6 @@ body { font-family: "Poppins", sans-serif; }
 .project.card { border-radius: 15px; text-decoration: none !important; margin: 5px auto; margin-top: 10px; transition: transform 400ms; }
 .project.card .card-img-top { border-radius: 15px 15px 0 0; width: 100%; height: 8vw; object-fit: cover; }
 .project.card:hover:not(.post) { transform: translateY(-8px); box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24); }
-
-h2 { display: flex; flex-direction: row; opacity: 0.5; color: #007bff; }
-
-h2:before, h2:after { content: ""; flex: 1 1; border-bottom: 1px solid; margin: auto; margin-left: 20%; margin-right: 20%; color: #007bff; opacity: 0.25; }
-
-h2:before { margin-right: 1%; }
-
-h2:after { margin-left: 1%; }
 
 .timeline-body { position: relative; border-radius: 0 15px 15px 0; padding: 5px 0; }
 .timeline-body:after { content: ""; width: 4px; height: 100%; background-color: #007bff; position: absolute; left: -4px; top: 0; }
