@@ -1,6 +1,6 @@
 ---
 name: Intelligent Picking Robot
-tools: 
+tools: [ROS, Gazebo, MoveIt, SolidWorks, EAGLE]
 image: ../imgs/projects/arm.jpeg
 description: Worked in a team of 5 on an autonomous robotic arm capable of picking and transporting items in a warehouse
 

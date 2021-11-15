@@ -1,6 +1,6 @@
 ---
 name: Institute Mess Digitization Project
-tools: 
+tools: [Raspberry Pi, ESP32, MQTT protocol]
 image: ../imgs/projects/mess1.jpg
 description: Digitized institute mess to replace mess cards with student ID Cards reducing the workload of mess workers
 ---

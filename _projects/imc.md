@@ -1,6 +1,6 @@
 ---
 name: Internaltional Micro-mouse Challenge
-tools: 
+tools: [ROS, Gazebo]
 image: ../imgs/projects/imc1.png
 description: Simulated an autonomous bot using ROS & Gazebo to solve an unknown maze in the shortest time
 number: three

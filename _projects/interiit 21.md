@@ -1,6 +1,6 @@
 ---
 name: DRDO's Vision Based Obstacle Avoidance Drone Challenge
-tools: 
+tools: [ROS, Gazebo, ArduPilot]
 image: ../imgs/projects/interiit1.png
 description: Worked in a team of 8 to autonomously explore static cluttered environments & land on target after detection
 ---
