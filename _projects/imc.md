@@ -1,8 +1,8 @@
 ---
 name: Internaltional Micro-mouse Challenge
 tools: 
-image: https://www.sketchappsources.com/resources/source-image/movie-badges-jurajjurik.png
-description: three
+image: ../imgs/projects/imc1.png
+description: Simulated an autonomous bot using ROS & Gazebo to solve an unknown maze in the shortest time
 number: three
 ---
 # International Micromouse Challenge
@@ -39,7 +39,6 @@ Approach to Minimize Time
 The performance was timed in two phases: one exploratory phase and several final runs (best time considered). We began the exploration phase at a slower speed. Once it reached the target square, we incremented the speed by 0.03 m/s. This marked the end of exploration phase. Thereafter, each time it finished a final run, the speed was incremented. Evidently, it would reach high speeds within a few increments.
 
 At some point, the speed would overpower the controls where it would slip and collide against the maze wall. Our algorithm routine gracefully shut down at that point. Since the best of final run times was taken, we were able to minimize it greatly while ascertaining that we definitely got the solution by starting at a slow velocity!
-
 
 
 
