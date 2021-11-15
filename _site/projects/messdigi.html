@@ -20,11 +20,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="CV">
-  <meta property="og:description" content="Welcome to my homepage! I am Tejal Barnwal  This website is a quick outlet for my thoughts.  You can also read more  about me &  my key projects.">
+  <meta property="og:title" content="Institute Mess Digitization Project">
+  <meta property="og:description" content="Digitized institute mess to replace mess cards with student ID Cards reducing the workload of mess workers">
 
-  <title>CV</title>
-  <meta name="description" content="Welcome to my homepage! I am Tejal Barnwal  This website is a quick outlet for my thoughts.  You can also read more  about me &  my key projects.">
+  <title>Institute Mess Digitization Project</title>
+  <meta name="description" content="Digitized institute mess to replace mess cards with student ID Cards reducing the workload of mess workers">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
 
@@ -66,9 +66,9 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/about/">About</a>
 
-      <a class="nav-item nav-link " href="/projects/">Projects</a>
+      <a class="nav-item nav-link active" href="/projects/">Projects</a>
 
-      <a class="nav-item nav-link active" href="/pages/cv">CV</a>
+      <a class="nav-item nav-link " href="/pages/cv">CV</a>
 
       <a class="nav-item nav-link " href="/art/">Fine Arts</a>
 
@@ -81,15 +81,25 @@
   </div>
 
 </nav>
-    <br>
-<br>
-<div style="text-align: center;">
-<!-- <a href="https://tejalbarnwal.github.io/pdfs/tejalbarnwal_resume.pdf">
-    <img src="../pdfs/pdf.svg" alt="CV" title="Dowload CV" height="30px"> &nbsp;
-    <span style="color:blue; font-size:1.25em">Curriculum Vitae </span>
-</a> -->
+    <div class="col-lg-10 mx-auto mt-5 post">
+  <h1 id="institute-mess-digitization-project">Institute Mess Digitization Project</h1>
 
-<iframe src="https://docs.google.com/gview?url=https://tejalbarnwal.github.io/assets/pdf/CV.pdf&embedded=true" width="75%" height="600px"></iframe>
+<h3 id="problem-statement">Problem Statement</h3>
+<p>To digitize the mess to decrease mess workers’ burden to pick and place the mess cards and monthly bill calculation. Also, this would prevent someone from using other students’ mess cards.</p>
+
+<p><img src="../imgs/projects/mess2.png" alt="drawing" width="500" /></p>
+
+<h3 id="approach">Approach</h3>
+<p>A database is stored in a central computer (RPI) made with Django, which Stores data like name, roll number, meal, card number, and the complete system is wireless based on MQTT protocol.</p>
+
+<p>As id cards are taken by students wherever they go, we thought of replacing them with mess cards. To do so, we use the RFID feature of our id cards which have unique numbers encoded into them.
+The encoded number is detected using the RC522( RFID scanner). 
+The ID card has to be placed over a box with an RFID scanner, an LCD indicating the meal approval, some LEDs to indicate pass or fail with the name and meal to be given printed on the LCD screen. This all is connected with a microcontroller( esp32) and all soldered into a single PCB and fitted in a 3D printed casing designed by us.
+Because there are three counters in a mess( main meal, milk, extras), we will have a box containing the circuitry for each of the counters, and the main single-board computer( RPI) would be used as the master to all three boards.</p>
+
+<p><img src="../imgs/projects/mess1.png" alt="drawing" width="500" />
+<img src="../imgs/projects/mess3.png" alt="drawing" width="500" /></p>
+
 </div>
   </main>
   <!-- <style>
