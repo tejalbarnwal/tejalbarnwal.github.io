@@ -3,12 +3,12 @@ name: SeDriCa, Unmesh Mashruwala Innovation Cell
 tools: [Decision Making Subsystem]
 image:
 description: Working in a 20+ member team aiming to develop a self-driving car capable of transversing on Indian roads
-external_url: https://youtu.be/8lNKjX0-RKY
+external_url: 
 ---
 
 # SeDriCa, Unmesh Mashruwaala Innovation Cell
 
-We are a team of 20+ students working on building a self-driving car. We are presently aiming at Intelligent Ground Vehicle Challenge(IGVC) 2022 particularly the Self Drive Challenge, held at Oakland University, Michigan. Our SedriCa comprises five subsystems: Perception (CV), Localisation, Path Planning, Decision Making, and Controls!
+We are a team of 20+ students working on building a self-driving car. We are presently aiming at <a href="http://www.igvc.org/index.htm">Intelligent Ground Vehicle Challenge(IGVC) 2022</a> particularly the Self Drive Challenge, held at Oakland University, Michigan. Our SedriCa comprises five subsystems: Perception (CV), Localisation, Path Planning, Decision Making, and Controls!
 
 * Computer vision module defines the understanding of the world in which our car is driving. This allows identifying cars, pedestrians, lanes, traffic signs, etc.
 
@@ -26,3 +26,5 @@ The optimisation solver has three requirements-
 The NMPC algorithm looks at N-steps ahead using the vehicle model provided and calculates the best possible inputs for the system by optimising the cost function. The control outputs thus generated are then applied to the vehicle using drive by wire via the CAN module, and feedback is received for the next step, where this process is repeated to complete the closed-loop control.
 
 We also implement a CAN module to communicate data between the calculated control input and the actuators. Further, we also use it to get feedback on the odometer and the status of the battery.
+
+We have <a href="https://youtu.be/8lNKjX0-RKY">demonstration video</a> for the work that was done with SeDriCa.
