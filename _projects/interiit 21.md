@@ -12,6 +12,7 @@ This compeititon was a part of <a href="https://www.facebook.com/interiit.tech/"
 src="https://www.youtube.com/watch?v=PdL64qHd97I&t=6930s">
 </iframe> -->
 
+
 For this purpose we came up with a three-layered navigation pipeline- Greedy Expploration, Scan and Survey and Sense of Progree vectors.
 - For the first layer of decision making, we applied butterworth filters and performed manipulations on depth image to obtain the optimum waypoint for exploration.
 - In case of dead ends, scan and survey pipeline tackles it by performing a scan operation to expand its field of view similar to a cone. These scan operations are performed at different altitudes.
