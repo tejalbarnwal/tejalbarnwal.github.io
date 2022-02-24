@@ -43,3 +43,10 @@ Other Resources : <br>
 	* Horizontal Split: `_`
 
 * Switch Panes with `Alt+ <arror_keys>`
+
+## Resources
+1. https://gist.github.com/MohamedAlaa/2961058
+2. https://tmuxcheatsheet.com/
+3. https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
+4. https://github.com/gpakosz/.tmux/blob/master/.tmux.conf
+
