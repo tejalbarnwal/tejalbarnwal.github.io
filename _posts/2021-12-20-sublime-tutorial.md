@@ -3,7 +3,7 @@ title: Sublime and Tmux Shortcuts
 tags: [Software Development]
 style: fill
 color: dark
-description: Everyday sublime text editor key shortcuts that I use
+description: Everyday key shortcuts that I use
 ---
 
 
@@ -24,11 +24,11 @@ Other Resources : <br>
 
 # Tmux Shortcuts to use (based on my `~/.tmux.conf`)
 
-* Start new with session name: `tmux new -s myname`
-* Attach to the named session: `tmux a -t myname`
-* List sessions: `tmuz ls`
-* Kill session: `tmux kill-session -t myname`
-* Prefix I use: `C-a`
+1. Start new with session name: `tmux new -s myname`
+2. Attach to the named session: `tmux a -t myname`
+3. List sessions: `tmuz ls`
+4. Kill session: `tmux kill-session -t myname`
+5. Prefix I use: `C-a`
 * Shortcuts with Windows:
 	* Create window:`c`
 	* List Windows: `w`
@@ -43,6 +43,7 @@ Other Resources : <br>
 	* Horizontal Split: `_`
 
 * Switch Panes with `Alt+ <arror_keys>`
+* Incse you face incompatiblity with agnoster theme and tmux, use `tmux -u` to intiate tmux
 
 ## Resources
 1. https://gist.github.com/MohamedAlaa/2961058
