@@ -7,6 +7,7 @@ description:
 ---
 This is a poetry I wrote on National Science Day, 28th Feb 2019. These were the days when I was preparing for JEE. This describes that despite not wanting to become a part of competition, I did become a part of it!
 
+```
 Ek rah maine chuni thi
 Us rah par mai chali bhi
 Kahi gir gayi, kahi bhatak gayi, kahi sangharsh ki
@@ -31,3 +32,4 @@ Khudko, kayi baar paaya bhi aur khoya bhi
 Dhoonda bhi, thopa bhi aur samjhaya bhi
 Par kyu mai samajh nhi paa rahi
 Na jaane kyu, kaha, kaise ho gayi hoon mai aise!
+```
