@@ -6,7 +6,7 @@ color: secondary
 description: Derivations for min-snap trajectory
 ---
 
-```html
+
 <br>
 <br>
 <div style="text-align: center;">
@@ -17,4 +17,3 @@ description: Derivations for min-snap trajectory
 
 <iframe src="https://docs.google.com/gview?url=https://tejalbarnwal.github.io/pdfs/min-snap-trajectory.pdf&embedded=true" width="75%" height="600px"></iframe>
 </div>
-```
