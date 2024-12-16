@@ -39,7 +39,7 @@ permalink: /art/
       <img src="../imgs/art4.jpg" alt="Image"/>
     </div>
     <div class="item">
-      <img src="../imgs/art10.jpeg" alt="Image"/>
+      <img src="../imgs/art10.jpg" alt="Image"/>
     </div>
     <div class="item">
       <img src="../imgs/art11.jpeg" alt="Image"/>
