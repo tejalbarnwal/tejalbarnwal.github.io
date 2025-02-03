@@ -12,6 +12,7 @@ I am a **Robotics Engineer** at <a href="https://www.linkedin.com/company/newspa
       
 I completed my undergraduate studies at <a href="https://www.iitb.ac.in/">Indian Institute of Technology, Bombay</a> in <a href="https://www.me.iitb.ac.in/">Mechanical Engineering</a>, but my curiosity didn’t stop there.
 I dove into everything from hobby-based projects—like creating something as simple as a xyloband with op-amps to more impactful work, such as developing haptic feedback paw for legged robots. It’s been quite a journey, starting with zero technical knowledge and growing into the engineer I am today.
+
 Along the way, I had the incredible opportunities of learning from some brilliant minds like Prof. <a href="https://www.autonomousrobotslab.com/">Dr. Kostas Alexis</a>, Prof. <a href="https://sites.google.com/iitb.ac.in/arpitasinha">Arpita Sinha</a>, and Prof. <a href="https://www.aero.iitb.ac.in/home/people/faculty/abhijit">Abhijit Gogulapati</a>. Plus, I got to team up with some seriously talented peers, representing IIT at national and international robotics challenges. Those were some wild, unforgettable times!
 
 Right now, I am all about the sweet spot where perception meets planning for small unmanned aerial vehicles.
@@ -27,6 +28,6 @@ This little corner of the web is my space to share a slice of my mind with the w
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div> -->
 
-<!-- <div class="row">
+<div class="row">
 {% include about/timeline.html %}
-</div> -->
+</div>
