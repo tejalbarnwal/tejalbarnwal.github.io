@@ -27,14 +27,16 @@ While robotics is my primary passion, I am deeply fascinated by machines and cre
 For me, learning is fun, but applying that knowledge to solve real-world problems or to create smething new out of it? That’s where the real thrill is. I’m all about connecting the dots—seeing how small steps lead to big, game-changing goals.
 
 #### **Updates & Musings**
-
-<!-- {% assign news = site.news %} {% for item in news %} {{ item.content }} {% endfor %} -->
 <div style="height:150px; overflow-y:scroll; border:1px solid #ccc; padding:10px;">
 
-**Dec'23**  : Our paper [MARBLER](#) won the Best Paper Award at MRS 2023  <br>
-**Oct'23**  : Our [survey paper on BioEL models](#) has been accepted at EMNLP 2023!  <br>
-**Aug'23**  : I'll be interning as an Applied Scientist at Amazon this fall! <br>
-**May'23**  : I'll be interning as a Machine Learning Engineer at Adobe this summer!<br>
+<b>Dec'23</b>
+: Our paper [MARBLER](#) won the Best Paper Award at MRS 2023  <br>
+<b>Oct'23</b>
+: Our [survey paper on BioEL models](#) has been accepted at EMNLP 2023!  <br>
+<b>Aug'23</b>
+: I'll be interning as an Applied Scientist at Amazon this fall! <br>
+<b>May'23</b>
+: I'll be interning as a Machine Learning Engineer at Adobe this summer!<br>
 
 </div>
 
