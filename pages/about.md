@@ -9,12 +9,14 @@ weight: 1
 <h1 style="text-align: center;"><b>About Me</b></h1>
 <br>
 
-#### Hey there! :wave:<br>
+<h4 style="text-align: center;">Hey there! <span style="font-size:1.5em;">👋</span></h4><br>
+<!-- #### Hey there! <span style="font-size:1.5em;">👋</span><br> -->
 I am a **Robotics Engineer** at <a href="https://www.linkedin.com/company/newspacert/">Newspace Research and Technologies</a>, an aerospace startup that’s all about defence tech for the Indian army. My playground? Visual servoing with multi-rotors—basically, using vision to make drones smarter, more precise, and downright impressive. When I’m not geeking out at work, you will find me diving into the open-source robotics world, contributing to awesome projects like Ardupilot, Gazebo and OpenMV. Giving back to the community is my jam, and I love being part of this global movement of enthusiasts.
 
-This little corner of the web is my space to share a slice of my mind with the world. You’ll find updates on my life, my professional journey, projects I’m working on, and even some personal musings. So, stick around, explore, and let’s geek out together! <span style="font-size:1.5em;">🚀</span>
+This little corner of the web is my space to share a slice of my mind with the world. You’ll find updates on my life, my professional journey, projects I’m working on, and even some personal musings. So, stick around, explore, and let’s geek out together! <span style="font-size:1.2em;">🚀</span>
       
-#### My Journey
+<!-- #### My Journey -->
+<h4 style="text-align: center;">My Journey</h4><br>
 I completed my undergraduate studies at <a href="https://www.iitb.ac.in/">Indian Institute of Technology, Bombay</a> in <a href="https://www.me.iitb.ac.in/">Mechanical Engineering</a>, but my curiosity didn’t stop there.
 I dove into everything from hobby-based projects—like creating something as simple as a xyloband with op-amps to more impactful work, such as developing haptic feedback paw for legged robots. It’s been quite a journey, starting with zero technical knowledge and growing into the engineer I am today.
 
@@ -51,13 +53,13 @@ For me, learning is fun, but applying that knowledge to solve real-world problem
 
 <div style="display: flex; align-items: flex-start; padding: 5px 0;">
   <div style="width: 150px; font-weight: bold;">Nov 2023</div>
-  <div style="margin-left: 10px;">Our <a href="https://www.newscientist.com/article/2401741-robots-with-squidgy-paws-could-navigate-uneven-terrain/"> TRACE Paw</a> has been featured in a NewScientist Article!</td></div>
+  <div style="margin-left: 10px;">Our <a href="https://www.newscientist.com/article/2401741-robots-with-squidgy-paws-could-navigate-uneven-terrain/"> TRACE Paw</a> has been featured in a NewScientist Article!</div>
 </div>
 <hr style="border: 0; border-top: 0px solid #eee;"/>
 
 <div style="display: flex; align-items: flex-start; padding: 5px 0;">
   <div style="width: 150px; font-weight: bold;">Oct 2023</div>
-  <div style="margin-left: 10px;">Our <a href="https://arxiv.org/abs/2311.03855">paper on TRACE Paw</a> has been accepted at ICAR 2023!</td></div>
+  <div style="margin-left: 10px;">Our <a href="https://arxiv.org/abs/2311.03855">paper on TRACE Paw</a> has been accepted at ICAR 2023!</div>
 </div>
 <hr style="border: 0; border-top: 0px solid #eee;"/>
 
