@@ -29,72 +29,77 @@ While robotics is my primary passion, I am deeply fascinated by machines and cre
 For me, learning is fun, but applying that knowledge to solve real-world problems or to create smething new out of it? That’s where the real thrill is. I’m all about connecting the dots—seeing how small steps lead to big, game-changing goals.
 
 #### **Updates & Musings**
-<!-- <div style="height:150px; overflow-y:scroll; border:0px solid #ccc; padding:10px;">
-
-<b>Dec'23</b>
-: Our paper [MARBLER](#) won the Best Paper Award at MRS 2023  <br>
-<b>Oct'23</b>
-: Our [survey paper on BioEL models](#) has been accepted at EMNLP 2023!  <br>
-<b>Aug'23</b>
-: I'll be interning as an Applied Scientist at Amazon this fall! <br>
-<b>May'23</b>
-: I'll be interning as a Machine Learning Engineer at Adobe this summer!<br>
-
-</div> -->
-
-<!-- <div style="height:200px; overflow-y:scroll; border:0px solid #ccc; padding:10px;">
-
-<div style="display: flex; justify-content: space-between; padding: 5px 0;">
-  <div style="width: 100px; font-weight: bold;">Dec 2023</div>
-  <div>Our paper <a href="#">MARBLER</a> won the Best Paper Award at MRS 2023</div>
-</div>
-<hr style="border: 0; border-top: 0px solid #eee;"/>
-
-<div style="display: flex; justify-content: space-between; padding: 5px 0;">
-  <div style="width: 100px; font-weight: bold;">Oct 2023</div>
-  <div>Our <a href="#">survey paper on BioEL models</a> has been accepted at EMNLP 2023!</div>
-</div>
-<hr style="border: 0; border-top: 0px solid #eee;"/>
-
-<div style="display: flex; justify-content: space-between; padding: 5px 0;">
-  <div style="width: 100px; font-weight: bold;">August 2023</div>
-  <div>I'll be interning as an Applied Scientist at Amazon this fall!</div>
-</div>
-<hr style="border: 0; border-top: 0px solid #eee;"/>
-
-<div style="display: flex; justify-content: space-between; padding: 5px 0;">
-  <div style="width: 100px; font-weight: bold;">May 2023</div>
-  <div>I'll be interning as a Machine Learning Engineer at Adobe this summer!</div>
-</div>
-
-</div> -->
-
-
-# Updates
-
 <div style="height:150px; overflow-y:scroll; border:0px solid #ccc; padding:10px;">
 
 <div style="display: flex; align-items: flex-start; padding: 5px 0;">
-  <div style="width: 100px; font-weight: bold;">Dec 2023</div>
-  <div style="margin-left: 10px;">Our paper <a href="#">MARBLER</a> won the Best Paper Award at MRS 2023</div>
+  <div style="width: 100px; font-weight: bold;">October 2024</div>
+  <div style="margin-left: 10px;">Delivered my debut lightning talk at ROSCon!</div>
+</div>
+<hr style="border: 0; border-top: 0px solid #eee;"/>
+
+<div style="display: flex; align-items: flex-start; padding: 5px 0;">
+  <div style="width: 100px; font-weight: bold;">October 2024</div>
+  <div style="margin-left: 10px;">Attended ROS Conference 2024 held in Odense, Denmark!</div>
+</div>
+<hr style="border: 0; border-top: 0px solid #eee;"/>
+
+<div style="display: flex; align-items: flex-start; padding: 5px 0;">
+  <div style="width: 100px; font-weight: bold;">June 2024</div>
+  <div style="margin-left: 10px;">Chosen as one of 16 Diversity Scholars worldwide for ROSCon 2024!</div>
+</div>
+<hr style="border: 0; border-top: 0px solid #eee;"/>
+
+<div style="display: flex; align-items: flex-start; padding: 5px 0;">
+  <div style="width: 100px; font-weight: bold;">Nov 2023</div>
+  <div style="margin-left: 10px;">Our <a href="https://www.newscientist.com/article/2401741-robots-with-squidgy-paws-could-navigate-uneven-terrain/"> TRACE Paw</a> has been featured in a NewScientist Article!</td></div>
 </div>
 <hr style="border: 0; border-top: 0px solid #eee;"/>
 
 <div style="display: flex; align-items: flex-start; padding: 5px 0;">
   <div style="width: 100px; font-weight: bold;">Oct 2023</div>
-  <div style="margin-left: 10px;">Our <a href="#">survey paper on BioEL models</a> has been accepted at EMNLP 2023!</div>
+  <div style="margin-left: 10px;">Our <a href="https://arxiv.org/abs/2311.03855">paper on TRACE Paw</a> has been accepted at ICAR 2023!</td></div>
 </div>
 <hr style="border: 0; border-top: 0px solid #eee;"/>
 
 <div style="display: flex; align-items: flex-start; padding: 5px 0;">
   <div style="width: 100px; font-weight: bold;">August 2023</div>
-  <div style="margin-left: 10px;">I'll be interning as an Applied Scientist at Amazon this fall!</div>
+  <div style="margin-left: 10px;">Starting to work as robotics engg at Newspace Research, Bengaluru</div>
 </div>
 <hr style="border: 0; border-top: 0px solid #eee;"/>
 
 <div style="display: flex; align-items: flex-start; padding: 5px 0;">
-  <div style="width: 100px; font-weight: bold;">May 2023</div>
-  <div style="margin-left: 10px;">I'll be interning as a Machine Learning Engineer at Adobe this summer!</div>
+  <div style="width: 100px; font-weight: bold;">April 2023</div>
+  <div style="margin-left: 10px;">Working as student contributor for Open Robotics(GSoC)</div>
+</div>
+<hr style="border: 0; border-top: 0px solid #eee;"/>
+
+<div style="display: flex; align-items: flex-start; padding: 5px 0;">
+  <div style="width: 100px; font-weight: bold;">May 2022</div>
+  <div style="margin-left: 10px;">I'll be working under Dr. Kostas Alexis for the summer on haptics!</div>
+</div>
+<hr style="border: 0; border-top: 0px solid #eee;"/>
+
+<div style="display: flex; align-items: flex-start; padding: 5px 0;">
+  <div style="width: 100px; font-weight: bold;">Apr 2021</div>
+  <div style="margin-left: 10px;">Joined the team Self Driving Car student technical team</div>
+</div>
+<hr style="border: 0; border-top: 0px solid #eee;"/>
+
+<div style="display: flex; align-items: flex-start; padding: 5px 0;">
+  <div style="width: 100px; font-weight: bold;">Dec 2020</div>
+  <div style="margin-left: 10px;">Won the International Micromouse Simulation Challenge!</div>
+</div>
+<hr style="border: 0; border-top: 0px solid #eee;"/>
+
+<div style="display: flex; align-items: flex-start; padding: 5px 0;">
+  <div style="width: 100px; font-weight: bold;">April 2020</div>
+  <div style="margin-left: 10px;">Elected into the technical council as convener of the <a href="https://itc.gymkhana.iitb.ac.in/~erc">Electronics and Robotics Club, IIT Bombay</a></div>
+</div>
+<hr style="border: 0; border-top: 0px solid #eee;"/>
+
+<div style="display: flex; align-items: flex-start; padding: 5px 0;">
+  <div style="width: 100px; font-weight: bold;">July 2019</div>
+  <div style="margin-left: 10px;">Started my undergraduate term at IIT Bombay</div>
 </div>
 
 </div>
