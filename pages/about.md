@@ -28,8 +28,8 @@ Right now, I am all about the sweet spot where perception meets planning for sma
 
 #### Beyond Robotics
 <!-- <h4 style="text-align: center;">Beyond Robotics</h4> -->
-While robotics is my primary passion, I am deeply fascinated by machines and creativity in all their forms. Whether it’s the adrenaline of sports, the beauty of art, the rhythm of music, or the sheer awe of aviation, I’m always inspired by people who are out there crushing it. Watching planes take off and land <span style="font-size:1.1em;">🏸</span>? Pure magic. 
-Those massive engines defying gravity? A physics-based miracle. And when I need a boost, I crank up The Fatrat or Alan Walker—instant joy! Oh, and I’m always down for a game of badminton. <span style="font-size:1.1em;">🛫</span>
+While robotics is my primary passion, I am deeply fascinated by machines and creativity in all their forms. Whether it’s the adrenaline of sports, the beauty of art, the rhythm of music, or the sheer awe of aviation, I’m always inspired by people who are out there crushing it. Watching planes take off and land <span style="font-size:1.1em;">🛫</span>? Pure magic. 
+Those massive engines defying gravity? A physics-based miracle. And when I need a boost, I crank up The Fatrat or Alan Walker—instant joy! Oh, and I’m always down for a game of badminton. <span style="font-size:1.1em;">🏸</span>
 
 For me, learning is fun, but applying that knowledge to solve real-world problems or to create smething new out of it? That’s where the real thrill is. I’m all about connecting the dots—seeing how small steps lead to big, game-changing goals.
 
