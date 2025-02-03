@@ -8,12 +8,11 @@ weight: 1
 # **About Me**
 
 Hey there! :wave:<br>
-I am a Robotics Engineer at Newspace Research and Technologies, an aerospace startup that’s all about defence tech for the Indian army. My playground? Visual servoing with multi-rotors—basically, using vision to make drones smarter, more precise, and downright impressive. When I’m not geeking out at work, you will find me diving into the open-source robotics world, contributing to awesome projects like Ardupilot, Gazebo and OpenMV. Giving back to the community is my jam, and I love being part of this global movement of enthusiasts.
+I am a **Robotics Engineer** at <a href="https://www.linkedin.com/company/newspacert/">Newspace Research and Technologies</a>, an aerospace startup that’s all about defence tech for the Indian army. My playground? Visual servoing with multi-rotors—basically, using vision to make drones smarter, more precise, and downright impressive. When I’m not geeking out at work, you will find me diving into the open-source robotics world, contributing to awesome projects like Ardupilot, Gazebo and OpenMV. Giving back to the community is my jam, and I love being part of this global movement of enthusiasts.
       
-I completed my undergraduate studies at <a href="https://www.iitb.ac.in/">Indian Institute of Technology, Bombay</a> (yeah, that one!) in <a href="https://www.me.iitb.ac.in/">Mechanical Engineering</a>, but my curiosity didn’t stop there.
-I dove into everything from hobby-based projects—like creating something as simple as a xyloband with op-amps and a social distance card using MIT App Inventor and ultrasonic sensors—to more impactful work, such as developing haptic feedback paw for legged robots. It’s been quite a journey, starting with zero technical knowledge and growing into the engineer I am today.
-
-Along the way, I had the incredible opportunities of learning from some brilliant minds like Prof. Dr. Kostas Alexis, Prof. Arpita Sinha, and Prof. Gogulapati. Plus, I got to team up with some seriously talented peers, representing IIT at national and international robotics challenges. Those were some wild, unforgettable times!
+I completed my undergraduate studies at <a href="https://www.iitb.ac.in/">Indian Institute of Technology, Bombay</a> in <a href="https://www.me.iitb.ac.in/">Mechanical Engineering</a>, but my curiosity didn’t stop there.
+I dove into everything from hobby-based projects—like creating something as simple as a xyloband with op-amps to more impactful work, such as developing haptic feedback paw for legged robots. It’s been quite a journey, starting with zero technical knowledge and growing into the engineer I am today.
+Along the way, I had the incredible opportunities of learning from some brilliant minds like Prof. <a href="https://www.autonomousrobotslab.com/">Dr. Kostas Alexis</a>, Prof. <a href="https://sites.google.com/iitb.ac.in/arpitasinha">Arpita Sinha</a>, and Prof. <a href="https://www.aero.iitb.ac.in/home/people/faculty/abhijit">Abhijit Gogulapati</a>. Plus, I got to team up with some seriously talented peers, representing IIT at national and international robotics challenges. Those were some wild, unforgettable times!
 
 Right now, I am all about the sweet spot where perception meets planning for small unmanned aerial vehicles.
 
