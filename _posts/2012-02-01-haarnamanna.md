@@ -1,27 +1,27 @@
 ---
-title: Chalte Chalo
+title: चलते चलो
 tags: [Poetry]
 style: fill
 color: danger
 description: 
 ---
 
-This is ithe poetry, that I wrote in my fifth grade. Though at that time I didnt completely understand the message this poetry emphasizes on, but today I understand the importance of this! Forgive me for the inncocent mistakes that I have made :p
+This is a poem I wrote in fifth grade. Back then, I didn’t fully grasp the message it conveys, but today I realize its significance! Please forgive the innocent mistakes I made. :p
 
 ```
-Haar na manna tum kabhi
-Bas chalte chalo, chalte chalo
+हार न मानना तुम कभी
+बस चलते चलो, चलते चलो
 
-Dukh aayengein aane do
-Mushqil ko aasan karo
-Haar na manna tum kabhi
-Bas chalte chalo, chalte chalo
+दुःख आएंगे आने दो
+मुसीबत को आसान करो
+हार न मानना तुम कभी
+बस चलते चलो, चलते चलो
 
-Haar gaye toh kya hua
-Aage badhte chalo
-Sar jhukhana mat kabhi
-Aage badhte chalo
+हार गए तो क्या हुआ
+आगे बढ़ते चलो
+सर झुकाना मत कभी
+आगे बढ़ते चलो
 
-Haar na manna tum kabhi
-Bas chalte chalo, chalte chalo
+हार न मानना तुम कभी
+बस चलते चलो, चलते चलो
 ```
