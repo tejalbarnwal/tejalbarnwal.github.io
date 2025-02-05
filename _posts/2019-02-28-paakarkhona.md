@@ -1,5 +1,5 @@
 ---
-title: Paakar Khona
+title: पाकर खोना
 tags: [Poetry]
 style: fill
 color: secondary
