@@ -20,7 +20,7 @@ This little corner of the web is my space to share a slice of my mind with the w
 I completed my undergraduate studies at <a href="https://www.iitb.ac.in/">Indian Institute of Technology, Bombay</a> in <a href="https://www.me.iitb.ac.in/">Mechanical Engineering</a>, but my curiosity didn’t stop there.
 I dove into everything from hobby-based projects—like creating something as simple as a xyloband with op-amps to more impactful work, such as developing haptic feedback paw for legged robots. It’s been quite a journey, starting with zero technical knowledge and growing into the engineer I am today.
 
-Along the way, I had the incredible opportunities of learning from some brilliant minds like Prof. <a href="https://www.autonomousrobotslab.com/">Dr. Kostas Alexis</a>, Prof. <a href="https://sites.google.com/iitb.ac.in/arpitasinha">Arpita Sinha</a>, and Prof. <a href="https://www.aero.iitb.ac.in/home/people/faculty/abhijit">Abhijit Gogulapati</a>. Plus, I got to team up with some seriously talented peers, representing IIT at national and international robotics challenges. Those were some wild, unforgettable times!
+Along the way, I had the incredible opportunities of learning from some brilliant minds like Prof. <a href="https://www.autonomousrobotslab.com/">Dr. Kostas Alexis</a>, Prof. <a href="https://www.aero.iitb.ac.in/home/people/faculty/abhijit">Abhijit Gogulapati</a> , and Prof. <a href="https://sites.google.com/iitb.ac.in/arpitasinha">Arpita Sinha</a>. Plus, I got to team up with some seriously talented peers, representing IIT at national and international robotics challenges. Those were some wild, unforgettable times!
 
 #### Research Interests
 <!-- <h4 style="text-align: center;">Research Interests</h4> -->
@@ -28,8 +28,8 @@ Right now, I am all about the sweet spot where perception meets planning for sma
 
 #### Beyond Robotics
 <!-- <h4 style="text-align: center;">Beyond Robotics</h4> -->
-While robotics is my primary passion, I am deeply fascinated by machines and creativity in all their forms. Whether it’s the adrenaline of sports, the beauty of art, the rhythm of music, or the sheer awe of aviation, I’m always inspired by people who are out there crushing it. Watching planes take off and land <span style="font-size:1.1em;">🛫</span>? Pure magic. 
-Those massive engines defying gravity? A physics-based miracle. And when I need a boost, I crank up The Fatrat or Alan Walker—instant joy! Oh, and I’m always down for a game of badminton. <span style="font-size:1.1em;">🏸</span>
+While robotics is my primary passion, I am deeply fascinated by machines and creativity in all their forms. Whether it’s the adrenaline of sports, the beauty of art, the rhythm of music, or the sheer awe of aviation, I am always inspired by people who are out there crushing it. Watching planes take off and land <span style="font-size:1.1em;">🛫</span>? Pure magic. 
+Those massive engines overcoming gravity? A physics-based miracle. And when I need a boost, I crank up The Fatrat or Alan Walker—instant joy! Oh, and I am always up for a game of badminton. <span style="font-size:1.1em;">🏸</span>
 
 For me, learning is fun, but applying that knowledge to solve real-world problems or to create something meaningful out of it, that’s where the real thrill is. I strive to see the big picture and understand how small steps can lead to big, game-changing goals
 
