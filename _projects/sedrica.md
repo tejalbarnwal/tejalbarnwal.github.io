@@ -28,3 +28,4 @@ The NMPC algorithm looks at N-steps ahead using the vehicle model provided and c
 We also implement a CAN module to communicate data between the calculated control input and the actuators. Further, we also use it to get feedback on the odometer and the status of the battery.
 
 We have <a href="https://youtu.be/8lNKjX0-RKY">demonstration video</a> for the work that was done with SeDriCa.
+We also <a href="https://docs.google.com/presentation/d/1W5A0jReg7d7uKAFLOSMB-yERA5avNCPgJgHQrGr8axc/edit?usp=sharing">presented</a> it to the administrative and senior technical committees at our institute.
