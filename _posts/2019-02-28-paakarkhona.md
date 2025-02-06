@@ -2,7 +2,7 @@
 title: पाकर खोना
 tags: [Poetry]
 style: fill
-color: secondary
+color: success
 description: 
 ---
 I wrote this poem on National Science Day, 28th February 2019, during my JEE preparation days. It reflects the internal conflict of getting swept into the race, even when I didn’t want to be part of the competition. Despite my reluctance, I found myself entangled in the very system I wished to avoid. The poem captures that journey—of struggling, adapting, and sometimes losing parts of myself along the way.

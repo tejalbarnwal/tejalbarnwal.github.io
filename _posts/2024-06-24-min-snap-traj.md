@@ -2,7 +2,7 @@
 title: Documentation for min-snap trajectory
 tags: [Documentation]
 style: fill
-color: secondary
+color: info
 description: Derivations for min-snap trajectory
 ---
 
