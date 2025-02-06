@@ -12,7 +12,7 @@ The objective was to design an autonomous bot simulated using ROS and Gazebo to 
 
 My team consisted of <a href="https://trunc8.github.io/">Siddharth Saha</a> and Shubham Agrawal. Led by Siddharth, our team won the competition completeling the track in minimum time with no penalities!
 
-Our implementation can be seen <a href="https://www.youtube.com/watch?v=PcbNQ-tVwQw">here</a> and the link the repository is <a href="https://github.com/trunc8/international-micromouse-techfest2020">here.</a>
+Our implementation can be seen <a href="https://www.youtube.com/watch?v=ofqWxsuaTu0">here</a> and the link the repository is <a href="https://github.com/trunc8/international-micromouse-techfest2020">here.</a>
 
 ### <u>Design</u>
 We came up with omni-wheeled bot to reduce steering latency.
