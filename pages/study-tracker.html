@@ -1,0 +1,967 @@
+---
+layout: page
+title: "Study Tracker 🛰"
+permalink: /study-tracker/
+---
+
+<style>
+/* ─── Root variables ─── */
+:root {
+  --c-bg:        #0f1117;
+  --c-card:      #1a1d27;
+  --c-border:    #2a2d3a;
+  --c-accent:    #7c6ef5;
+  --c-accent2:   #5cb89e;
+  --c-warn:      #e8a44a;
+  --c-text:      #e2e4ef;
+  --c-muted:     #7a7d8e;
+  --c-done:      #3b6d3b;
+  --c-done-text: #9fd69f;
+  --radius:      10px;
+  --font:        'Inter', system-ui, sans-serif;
+}
+
+#st-root * { box-sizing: border-box; }
+
+#st-root {
+  font-family: var(--font);
+  color: var(--c-text);
+  background: var(--c-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: -1rem -1rem 0;
+  min-height: 80vh;
+}
+
+/* ─── Quote card ─── */
+.st-quote-card {
+  background: linear-gradient(135deg, #1e1a3a 0%, #12202e 100%);
+  border: 1px solid #3a3060;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.st-quote-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px; left: 10px;
+  font-size: 80px;
+  color: #3a3060;
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+.st-quote-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #c8c0f0;
+  flex: 1;
+  padding-left: 1.5rem;
+  transition: opacity 0.4s;
+}
+.st-quote-author {
+  font-size: 11px;
+  color: #7060b0;
+  margin-top: 4px;
+  font-style: italic;
+}
+.st-quote-btn {
+  background: none;
+  border: 1px solid #3a3060;
+  color: #7060b0;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.st-quote-btn:hover { border-color: var(--c-accent); color: var(--c-accent); }
+
+/* ─── Stats row ─── */
+.st-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+@media(max-width:600px){ .st-stats { grid-template-columns: 1fr 1fr; } }
+.st-stat {
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  text-align: center;
+}
+.st-stat-val {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--c-accent);
+}
+.st-stat-label {
+  font-size: 11px;
+  color: var(--c-muted);
+  margin-top: 2px;
+}
+
+/* ─── Progress bar ─── */
+.st-progress-wrap {
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.st-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--c-muted);
+  margin-bottom: 8px;
+}
+.st-progress-label span { color: var(--c-accent2); font-weight: 600; }
+.st-progress-bar {
+  height: 8px;
+  background: #252838;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.st-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--c-accent), var(--c-accent2));
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* ─── Notification bar ─── */
+.st-notif-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 13px;
+}
+.st-notif-bar .st-notif-info { flex: 1; color: var(--c-muted); }
+.st-notif-bar .st-notif-info strong { color: var(--c-text); }
+.st-notif-times { font-size: 11px; color: var(--c-accent); margin-top: 2px; }
+.st-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.st-btn-primary { background: var(--c-accent); color: #fff; }
+.st-btn-primary:hover { background: #6a5ee0; }
+.st-btn-success { background: var(--c-done); color: var(--c-done-text); cursor: default; }
+.st-btn-warn { background: #3a2a10; color: var(--c-warn); border: 1px solid #5a4010; }
+
+/* ─── Section heading ─── */
+.st-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--c-muted);
+  margin: 0 0 10px;
+}
+
+/* ─── Phase accordion ─── */
+.st-phase {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+  background: var(--c-card);
+}
+.st-phase-hd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  cursor: pointer;
+  user-select: none;
+}
+.st-phase-hd:hover { background: #1f2233; }
+.st-phase-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.st-phase-name { font-size: 13px; font-weight: 500; color: var(--c-text); flex: 1; }
+.st-phase-meta { font-size: 11px; color: var(--c-muted); }
+.st-phase-prog {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: #252838;
+  margin-left: 8px;
+}
+.st-phase-ch { font-size: 13px; color: var(--c-muted); transition: transform .2s; flex-shrink: 0; }
+.st-phase-body { display: none; border-top: 1px solid var(--c-border); padding: 10px 14px 14px; }
+.st-phase-body.open { display: block; }
+
+/* ─── Week label ─── */
+.st-wk-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--c-muted);
+  margin: 12px 0 6px;
+}
+.st-wk-lbl:first-child { margin-top: 0; }
+
+/* ─── Task row ─── */
+.st-task {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 4px;
+  border-radius: 6px;
+  transition: background .1s;
+}
+.st-task:hover { background: #1f2233; }
+.st-task input[type=checkbox] {
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 15px; height: 15px;
+  cursor: pointer;
+  accent-color: var(--c-accent);
+}
+.st-task-body { flex: 1; }
+.st-task-text {
+  font-size: 13px;
+  color: var(--c-text);
+  line-height: 1.5;
+  cursor: pointer;
+}
+.st-task.done .st-task-text {
+  color: var(--c-muted);
+  text-decoration: line-through;
+}
+.st-task-link {
+  font-size: 11px;
+  color: var(--c-accent);
+  text-decoration: none;
+  margin-top: 2px;
+  display: inline-block;
+}
+.st-task-link:hover { text-decoration: underline; }
+
+/* ─── Assignment badge ─── */
+.st-assign {
+  margin-top: 10px;
+  padding: 8px 11px;
+  background: #1a2a1a;
+  border-left: 2.5px solid #639922;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #9fd69f;
+  line-height: 1.5;
+}
+.st-assign-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  color: #639922;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 3px;
+}
+
+/* ─── Today highlight ─── */
+.st-today-banner {
+  background: #1a1f2e;
+  border: 1px solid #2a3560;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.st-today-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6080e0;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 8px;
+}
+
+/* ─── Streak fire ─── */
+.st-streak-fire { font-size: 18px; }
+
+/* ─── Reset link ─── */
+.st-reset-link {
+  font-size: 11px;
+  color: var(--c-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.st-reset-link:hover { color: #e05050; }
+
+.st-footer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--c-muted);
+}
+</style>
+
+<div id="st-root">
+
+  <!-- Quote card -->
+  <div class="st-quote-card">
+    <div class="st-quote-text" id="st-quote-text">
+      <div id="st-q-body">loading...</div>
+      <div class="st-quote-author" id="st-q-author"></div>
+    </div>
+    <button class="st-quote-btn" onclick="nextQuote()">next →</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="st-stats">
+    <div class="st-stat">
+      <div class="st-stat-val" id="st-today-done">0</div>
+      <div class="st-stat-label">done today</div>
+    </div>
+    <div class="st-stat">
+      <div class="st-stat-val" id="st-streak-val">0 <span class="st-streak-fire">🔥</span></div>
+      <div class="st-stat-label">day streak</div>
+    </div>
+    <div class="st-stat">
+      <div class="st-stat-val" id="st-total-done">0</div>
+      <div class="st-stat-label">total done</div>
+    </div>
+    <div class="st-stat">
+      <div class="st-stat-val" id="st-total-left">0</div>
+      <div class="st-stat-label">remaining</div>
+    </div>
+  </div>
+
+  <!-- Overall progress -->
+  <div class="st-progress-wrap">
+    <div class="st-progress-label">
+      <span>Overall progress</span>
+      <span id="st-pct-label">0%</span>
+    </div>
+    <div class="st-progress-bar">
+      <div class="st-progress-fill" id="st-progress-fill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- Notification setup -->
+  <div class="st-notif-bar">
+    <div class="st-notif-info">
+      <strong>Daily reminders</strong>
+      <div class="st-notif-times" id="st-notif-times">fires at 8:00 AM · 1:00 PM · 5:00 PM · 9:00 PM (keep this tab open for notifications)</div>
+    </div>
+    <button class="st-btn st-btn-primary" id="st-notif-btn" onclick="setupNotifications()">Enable 🔔</button>
+  </div>
+
+  <!-- Today's focus -->
+  <div class="st-today-banner" id="st-today-wrap">
+    <div class="st-today-title">📍 Today's tasks</div>
+    <div id="st-today-tasks"><em style="color:var(--c-muted);font-size:13px">All caught up! Open a phase below to keep going.</em></div>
+  </div>
+
+  <!-- Full plan -->
+  <div class="st-section-title">Full study plan</div>
+  <div id="st-phases"></div>
+
+  <div class="st-footer">
+    <span>progress saved in your browser · <button class="st-reset-link" onclick="confirmReset()">reset all progress</button></span>
+    <span id="st-last-update"></span>
+  </div>
+
+</div>
+
+<script>
+// ─────────────────────────────────────────
+//   DATA
+// ─────────────────────────────────────────
+
+var QUOTES = [
+  { text: "Slow is smooth. Smooth is fast. You are exactly where you need to be.", author: "— Navy SEALs maxim" },
+  { text: "Every expert was once a beginner who refused to quit on a confusing day.", author: "" },
+  { text: "You don't have to be great to start, but you have to start to be great.", author: "— Zig Ziglar" },
+  { text: "The robots you build tomorrow are being built today — in understanding.", author: "" },
+  { text: "A journey of a thousand miles begins with a single step. One paper. One diagram. One day.", author: "— Laozi (adapted)" },
+  { text: "Confusion is not failure. Confusion is the feeling of your brain reorganizing itself.", author: "" },
+  { text: "You are not behind. You are on a different timeline that is entirely yours.", author: "" },
+  { text: "The best time to study was yesterday. The second best time is right now.", author: "" },
+  { text: "There is no shortcut to understanding epipolar geometry — and that's what makes it yours when you get it.", author: "" },
+  { text: "Every line of code you read in ORB-SLAM3 was written by someone who once didn't know what SLAM was.", author: "" },
+  { text: "Do not judge me by my successes; judge me by how many times I fell down and got back up again.", author: "— Nelson Mandela" },
+  { text: "Small goals are not small. They are the only real kind.", author: "" },
+  { text: "Understanding is not downloaded. It is built, slowly, one day at a time.", author: "" },
+  { text: "You have already survived every hard day you've had. That's a 100% success rate.", author: "" },
+  { text: "The map is not the territory — but making the map is how you learn the territory.", author: "— SLAM wisdom" },
+  { text: "Even if you go slow, you are lapping everyone still sitting on the couch.", author: "" },
+  { text: "A robot doesn't know where it is. Neither do you right now. That's not failure — that's initialization.", author: "" },
+  { text: "You are not stuck. You are in the middle.", author: "" },
+  { text: "The pose graph of your knowledge is being optimized with every session. Trust the process.", author: "" },
+  { text: "Be patient with yourself. You are a seed in winter. The growth is invisible, but it is happening.", author: "" },
+];
+
+var PLAN = [
+  {
+    id:"p0", name:"Orient yourself", weeks:"Week 1", color:"#8B8680",
+    data:[
+      { wk:"Week 1", tasks:[
+        { id:"w1d1", text:"Watch Stachniss 'Introduction to SLAM' (~40 min). Just watch, no notes.", link:"https://www.youtube.com/watch?v=0I30M6yTklo" },
+        { id:"w1d2", text:"Read VAMR L01 slides 1–15: what is visual odometry, why cameras for robots?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/01_introduction.pdf" },
+        { id:"w1d3", text:"Flip through ORB-SLAM3 paper figures only. Write 1 sentence per figure.", link:"https://arxiv.org/abs/2007.11898" },
+        { id:"w1d4", text:"Read Furgale Camera Notation Tutorial PDF — notation used in all VAMR lectures.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/FurgaleTutorial.pdf" },
+        { id:"w1d5", text:"Write your question bank: 5 things you genuinely don't understand. Save it — revisit at week 12." },
+      ]}
+    ]
+  },
+  {
+    id:"p1", name:"Camera model + calibration", weeks:"Weeks 2–3", color:"#4a90d9",
+    data:[
+      { wk:"Week 2 — Image formation (L02)", tasks:[
+        { id:"w2d1", text:"L02 slides 1–20: pinhole camera, 4 coordinate frames. Draw the diagram.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/02_image_formation.pdf" },
+        { id:"w2d2", text:"L02 slides 21–38: intrinsic matrix K, homogeneous coords. Derive p=K·[R|t]·P on paper.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/02_image_formation.pdf" },
+        { id:"w2d3", text:"L02 slides 39–end: distortion models. When does distortion matter most in SLAM?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/02_image_formation.pdf" },
+        { id:"w2d4", text:"Exercise 01: read AR cube problem. Sketch the geometry. What 3D points are you projecting?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_01.zip" },
+        { id:"w2d5", text:"Exercise 01: implement the projection. Draw wireframe cube on provided image.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_01.zip" },
+      ]},
+      { wk:"Week 3 — Camera calibration + PnP (L03)", asn:"In your own words: what is camera calibration, what does it output, and why does SLAM need it?", tasks:[
+        { id:"w3d1", text:"L03 slides 1–18: calibration motivation, checkerboard method. What are we solving for?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/03_camera_calibration.pdf" },
+        { id:"w3d2", text:"L03 slides 19–end: DLT algorithm, SVD trick. Read SVD notes PDF.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/02_SVD.pdf" },
+        { id:"w3d3", text:"Exercise 02: read PnP problem. Understand setup before coding: 3D points + 2D projections → find pose.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_02.zip" },
+        { id:"w3d4", text:"Exercise 02: implement DLT. Test on provided point correspondences.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_02.zip" },
+        { id:"w3d5", text:"Compare with Solution 02. For each difference, write one sentence on what you misunderstood.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/solution_02.zip" },
+      ]}
+    ]
+  },
+  {
+    id:"p2", name:"Filtering + feature detection", weeks:"Weeks 4–5", color:"#4db89e",
+    data:[
+      { wk:"Week 4 — Filtering + Harris (L04, L05)", asn:"Derivation: for a 3×3 patch, write out structure tensor M. What R value indicates a corner? An edge? Flat?", tasks:[
+        { id:"w4d1", text:"L04 slides 1–22: filtering, Gaussian blur, convolution. Do convolution by hand on 3×3 patch.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/04_filtering.pdf" },
+        { id:"w4d2", text:"L04 slides 23–end: Sobel, Canny. Complete numerical exercise on paper.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_04.pdf" },
+        { id:"w4d3", text:"L05 slides 1–20: Harris corner detector. Understand R = det(M) − k·trace(M)².", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/05_feature_detection_1.pdf" },
+        { id:"w4d4", text:"L05 slides 21–end: Shi-Tomasi, NMS, scale problem. Why does Harris fail under zoom?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/05_feature_detection_1.pdf" },
+        { id:"w4d5", text:"Exercise 03: implement Harris detector, test on provided image.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_03.zip" },
+      ]},
+      { wk:"Week 5 — SIFT + ORB (L06)", asn:"Explain ORB to a non-expert: why invented, two components, why right choice for real-time SLAM?", tasks:[
+        { id:"w5d1", text:"Exercise 03: finish + compare with Solution 03. How does NMS affect corner count?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/solution_03.zip" },
+        { id:"w5d2", text:"L06 slides 1–22: SIFT — scale-space, DoG, orientation assignment. Why can't Harris handle scale change?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/06_feature_detection_2.pdf" },
+        { id:"w5d3", text:"L06 slides 23–end: ORB = Oriented FAST + Rotated BRIEF. Why binary? Why rotation invariant?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/06_feature_detection_2.pdf" },
+        { id:"w5d4", text:"Exercise 04: implement SIFT matching with Lowe's ratio test. Compare with/without.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_04.zip" },
+        { id:"w5d5", text:"Exercise 04: finish + compare with Solution 04.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/solution_04.zip" },
+      ]}
+    ]
+  },
+  {
+    id:"p3", name:"Multi-view geometry", weeks:"Weeks 6–8", color:"#e8a44a",
+    data:[
+      { wk:"Week 6 — Stereo + epipolar (L07)", tasks:[
+        { id:"w6d1", text:"L07 slides 1–18: stereo setup, disparity, depth = (f·B)/d. Derive geometrically.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/07_multiple_view_geometry_1.pdf" },
+        { id:"w6d2", text:"L07 slides 19–end: epipolar geometry, x2^T·E·x1 = 0. Draw: two cameras, baseline, epipolar plane.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/07_multiple_view_geometry_1.pdf" },
+        { id:"w6d3", text:"Exercise 05: stereo vision — implement image rectification.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_05.zip" },
+        { id:"w6d4", text:"Exercise 05: disparity computation + triangulation.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_05.zip" },
+        { id:"w6d5", text:"L08 slides 1–15: essential matrix E = [t]×R. How does it encode epipolar constraint?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/08_multiple_view_geometry_2.pdf" },
+      ]},
+      { wk:"Week 7 — 8-point + P3P + RANSAC (L08, L09)", asn:"RANSAC derivation: given ε=0.6 (inlier ratio) and n=3 points, compute N iterations for 99% success. Show formula.", tasks:[
+        { id:"w7d1", text:"L08 slides 16–end: essential vs fundamental matrix. Exercise 06: 8-point algorithm — read statement.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_06.zip" },
+        { id:"w7d2", text:"Exercise 06: finish. Verify by visualizing epipolar lines on test images.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/solution_06.zip" },
+        { id:"w7d3", text:"L09 slides 1–20: P3P — minimal pose from 3 correspondences. What's the ambiguity?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/09_multiple_view_geometry_3.pdf" },
+        { id:"w7d4", text:"L09 slides 21–end: RANSAC — iteration count formula. Compute N for 60% inliers, 99% success.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/ransac.zip" },
+        { id:"w7d5", text:"Exercise 07: P3P + RANSAC. Understand structure first. This is the hardest exercise so far.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_07.zip" },
+      ]},
+      { wk:"Week 8 — Bundle adjustment + ORB-SLAM1 paper (L10)", asn:"Draw ORB-SLAM1 from memory: 3 threads, what each does, data flows. Label everything.", tasks:[
+        { id:"w8d1", text:"L10 slides 1–20: bundle adjustment. What is reprojection error? Poses AND map points optimized.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/10_multiple_view_geometry_4.pdf" },
+        { id:"w8d2", text:"L10 slides 21–end: Jacobian sparsity, SfM pipeline. Start Exercise 08: Bundle Adjustment.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_08.zip" },
+        { id:"w8d3", text:"Exercise 08: implement linearized system. Compare convergence before/after BA.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/solution_08.zip" },
+        { id:"w8d4", text:"ORB-SLAM1 paper: Introduction + Section 3. You know the vocabulary now. Read differently.", link:"https://arxiv.org/abs/1502.00956" },
+        { id:"w8d5", text:"ORB-SLAM1 paper: Sections 4–8. Draw the 3-thread system diagram from memory when done.", link:"https://arxiv.org/abs/1502.00956" },
+      ]}
+    ]
+  },
+  {
+    id:"p4", name:"Optical flow + place recognition", weeks:"Week 9", color:"#d97a8a",
+    data:[
+      { wk:"Week 9", asn:"Explain loop closure end-to-end: robot revisits a place → what happens step by step up to pose graph correction?", tasks:[
+        { id:"w9d1", text:"L11 slides 1–20: optical flow, brightness constancy, Lucas-Kanade. What does it minimize?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/11_tracking.pdf" },
+        { id:"w9d2", text:"L11 slides 21–end + Exercise 09: KLT tracker — implement image warping step.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_09.zip" },
+        { id:"w9d3", text:"Exercise 09: iterate + test. When does the tracker break? What causes drift?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/solution_09.zip" },
+        { id:"w9d4", text:"L12a: place recognition, vocabulary tree, DBoW2. How does SLAM find a revisited place at scale?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/12a_recognition.pdf" },
+        { id:"w9d5", text:"L12b: deep learning intro — skim 30 min only. Where could learned features replace ORB?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/12b_deep_learning.pdf" },
+      ]}
+    ]
+  },
+  {
+    id:"p5", name:"Visual-inertial + pre-integration", weeks:"Week 10", color:"#7c6ef5",
+    data:[
+      { wk:"Week 10 — hardest week, go slow", asn:"Write pre-integration in 5 sentences: problem it solves, what gets preintegrated, why SO(3) matters, what changes when bias updates.", tasks:[
+        { id:"w10d1", text:"L13 slides 1–18: IMU model, accelerometer + gyroscope, bias. Why does IMU-only drift in ~30 sec?", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/13_visual_inertial_fusion.pdf" },
+        { id:"w10d2", text:"L13 slides 19–end: VI fusion, complementary frequency. Dense section — re-read slowly.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/13_visual_inertial_fusion.pdf" },
+        { id:"w10d3", text:"Forster et al. 2015: read Introduction + Section 3 only. Why not re-integrate when linearization point changes?", link:"https://arxiv.org/abs/1512.02363" },
+        { id:"w10d4", text:"Exercise 10: VIO fusion. Read statement, implement IMU pre-integration step. Hard — understand structure first.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_10.zip" },
+        { id:"w10d5", text:"Exercise 10: compare with solution. For each wrong step, write one sentence on what you misunderstood.", link:"https://rpg.ifi.uzh.ch/docs/teaching/2025/exercise_10.zip" },
+      ]}
+    ]
+  },
+  {
+    id:"p6", name:"ORB-SLAM 1, 2, 3 — full paper reads", weeks:"Weeks 11–12", color:"#6aad5e",
+    data:[
+      { wk:"Week 11 — ORB-SLAM2 + ORB-SLAM3 intro", tasks:[
+        { id:"w11d1", text:"ORB-SLAM2: Introduction. What's new vs ORB-SLAM1? List: stereo, RGBD, map reuse.", link:"https://arxiv.org/abs/1610.06475" },
+        { id:"w11d2", text:"ORB-SLAM2: stereo + RGBD pipeline. How does depth change initialization and scale?", link:"https://arxiv.org/abs/1610.06475" },
+        { id:"w11d3", text:"ORB-SLAM2: map reuse + relocalization. How does the system recover after getting lost?", link:"https://arxiv.org/abs/1610.06475" },
+        { id:"w11d4", text:"ORB-SLAM3: Introduction + Section 2. Three main contributions — name them.", link:"https://arxiv.org/abs/2007.11898" },
+        { id:"w11d5", text:"ORB-SLAM3 Section 4: Visual-Inertial. Connect Forster equations to what ORB-SLAM3 does.", link:"https://arxiv.org/abs/2007.11898" },
+      ]},
+      { wk:"Week 12 — ORB-SLAM3 deep read + comparison", asn:"What is the single biggest architectural change in ORB-SLAM3 over ORB-SLAM2? 3–4 sentences, explain why it matters.", tasks:[
+        { id:"w12d1", text:"ORB-SLAM3 Section 5: Atlas multi-map. What triggers a new map? What triggers a merge?", link:"https://arxiv.org/abs/2007.11898" },
+        { id:"w12d2", text:"ORB-SLAM3 Section 6: IMU initialization without ground truth. How are gravity, scale, bias estimated?", link:"https://arxiv.org/abs/2007.11898" },
+        { id:"w12d3", text:"ORB-SLAM3 Section 3: camera model generality — fisheye, omnidirectional abstraction.", link:"https://arxiv.org/abs/2007.11898" },
+        { id:"w12d4", text:"Build comparison table: ORB-SLAM1 vs 2 vs 3 — sensor support, map reuse, VI, multi-map." },
+        { id:"w12d5", text:"Re-read your week 1 question bank. How many can you answer now? Which 1–2 remain?" },
+      ]}
+    ]
+  },
+  {
+    id:"p7", name:"Code walkthrough", weeks:"Week 13+", color:"#9a9a9a",
+    data:[
+      { wk:"Week 13+ — reading the code", tasks:[
+        { id:"w13d1", text:"System.cc: how does the system start? Map startup sequence to paper Section 3.", link:"https://github.com/UZ-SLAMLab/ORB_SLAM3" },
+        { id:"w13d2", text:"Tracking.cc: trace one frame end-to-end. GrabImageMonocular → Track → TrackWithMotionModel.", link:"https://github.com/UZ-SLAMLab/ORB_SLAM3/blob/master/src/Tracking.cc" },
+        { id:"w13d3", text:"LocalMapping.cc: what does the mapping thread do? Find CreateNewKeyFrame.", link:"https://github.com/UZ-SLAMLab/ORB_SLAM3/blob/master/src/LocalMapping.cc" },
+        { id:"w13d4", text:"LoopClosing.cc: loop detection → verification → essential graph optimization.", link:"https://github.com/UZ-SLAMLab/ORB_SLAM3/blob/master/src/LoopClosing.cc" },
+        { id:"w13d5", text:"ImuTypes.cc: find the pre-integration code. Compare directly with Forster equations.", link:"https://github.com/UZ-SLAMLab/ORB_SLAM3/blob/master/src/ImuTypes.cc" },
+      ]}
+    ]
+  }
+];
+
+// ─────────────────────────────────────────
+//   STATE (localStorage)
+// ─────────────────────────────────────────
+
+function getState() {
+  try { return JSON.parse(localStorage.getItem('st_state') || '{}'); } catch(e){ return {}; }
+}
+function saveState(s) {
+  s._lastSaved = new Date().toISOString();
+  localStorage.setItem('st_state', JSON.stringify(s));
+}
+function getChecked() {
+  return getState().checked || {};
+}
+function setChecked(id, val) {
+  var s = getState();
+  s.checked = s.checked || {};
+  s.checked[id] = val;
+  // update streak
+  var today = todayStr();
+  s.lastActiveDay = s.lastActiveDay || today;
+  if (s.lastActiveDay !== today) {
+    var diff = daysBetween(s.lastActiveDay, today);
+    s.streak = (diff === 1) ? (s.streak || 0) + 1 : 1;
+    s.lastActiveDay = today;
+  }
+  saveState(s);
+}
+function todayStr() {
+  return new Date().toISOString().slice(0,10);
+}
+function daysBetween(a, b) {
+  return Math.round((new Date(b) - new Date(a)) / 86400000);
+}
+
+// ─────────────────────────────────────────
+//   QUOTES
+// ─────────────────────────────────────────
+
+var quoteIdx = Math.floor(Math.random() * QUOTES.length);
+function renderQuote() {
+  var q = QUOTES[quoteIdx];
+  document.getElementById('st-q-body').textContent = q.text;
+  document.getElementById('st-q-author').textContent = q.author;
+}
+function nextQuote() {
+  quoteIdx = (quoteIdx + 1) % QUOTES.length;
+  renderQuote();
+}
+setInterval(nextQuote, 30000);
+
+// ─────────────────────────────────────────
+//   STATS
+// ─────────────────────────────────────────
+
+function allTaskIds() {
+  var ids = [];
+  PLAN.forEach(function(ph){ ph.data.forEach(function(wk){ wk.tasks.forEach(function(t){ ids.push(t.id); }); }); });
+  return ids;
+}
+
+// "today's tasks" = tasks in the current active phase week
+// We determine active phase by: first phase with any uncompleted tasks
+function findTodayTasks() {
+  var checked = getChecked();
+  for (var pi = 0; pi < PLAN.length; pi++) {
+    var ph = PLAN[pi];
+    for (var wi = 0; wi < ph.data.length; wi++) {
+      var wk = ph.data[wi];
+      var remaining = wk.tasks.filter(function(t){ return !checked[t.id]; });
+      if (remaining.length > 0) {
+        return { phase: ph.name, week: wk.wk, tasks: wk.tasks };
+      }
+    }
+  }
+  return null;
+}
+
+function updateStats() {
+  var checked = getChecked();
+  var all = allTaskIds();
+  var total = all.length;
+  var done = all.filter(function(id){ return checked[id]; }).length;
+  var pct = total > 0 ? Math.round(done / total * 100) : 0;
+
+  // today done = tasks checked in today's active week
+  var todayCtx = findTodayTasks();
+  var todayDone = 0;
+  if (todayCtx) {
+    todayDone = todayCtx.tasks.filter(function(t){ return checked[t.id]; }).length;
+  }
+
+  var s = getState();
+  var streak = s.streak || 0;
+
+  document.getElementById('st-today-done').textContent = todayDone;
+  document.getElementById('st-streak-val').innerHTML = streak + ' <span class="st-streak-fire">🔥</span>';
+  document.getElementById('st-total-done').textContent = done;
+  document.getElementById('st-total-left').textContent = total - done;
+  document.getElementById('st-pct-label').textContent = pct + '%';
+  document.getElementById('st-progress-fill').style.width = pct + '%';
+
+  if (s._lastSaved) {
+    var d = new Date(s._lastSaved);
+    document.getElementById('st-last-update').textContent = 'last saved ' + d.toLocaleTimeString();
+  }
+}
+
+// ─────────────────────────────────────────
+//   TODAY'S TASKS BANNER
+// ─────────────────────────────────────────
+
+function renderToday() {
+  var ctx = findTodayTasks();
+  var el = document.getElementById('st-today-tasks');
+  if (!ctx) {
+    el.innerHTML = '<em style="color:#6aad5e;font-size:13px">🎉 All tasks done! You\'ve completed the plan.</em>';
+    return;
+  }
+  var checked = getChecked();
+  var html = '<div style="font-size:11px;color:var(--c-muted);margin-bottom:8px">' + ctx.phase + ' · ' + ctx.week + '</div>';
+  ctx.tasks.forEach(function(t){
+    var done = checked[t.id];
+    html += '<div class="st-task' + (done?' done':'') + '" style="padding:5px 4px">'
+      + '<input type="checkbox" ' + (done?'checked':'') + ' onchange="toggleTask(\'' + t.id + '\',this.checked)">'
+      + '<div class="st-task-body">'
+      + '<div class="st-task-text">' + escHtml(t.text) + '</div>'
+      + (t.link ? '<a class="st-task-link" href="' + t.link + '" target="_blank" rel="noopener">↗ open resource</a>' : '')
+      + '</div></div>';
+  });
+  el.innerHTML = html;
+}
+
+// ─────────────────────────────────────────
+//   FULL PLAN RENDER
+// ─────────────────────────────────────────
+
+function renderPlan() {
+  var container = document.getElementById('st-phases');
+  container.innerHTML = '';
+  var checked = getChecked();
+
+  PLAN.forEach(function(ph){
+    var allPhaseTasks = [];
+    ph.data.forEach(function(wk){ wk.tasks.forEach(function(t){ allPhaseTasks.push(t.id); }); });
+    var donePh = allPhaseTasks.filter(function(id){ return checked[id]; }).length;
+    var totalPh = allPhaseTasks.length;
+    var pct = totalPh > 0 ? Math.round(donePh/totalPh*100) : 0;
+
+    var card = document.createElement('div');
+    card.className = 'st-phase';
+    card.id = 'phase-' + ph.id;
+
+    // header
+    var progColor = pct === 100 ? '#6aad5e' : pct > 0 ? '#e8a44a' : 'var(--c-muted)';
+    card.innerHTML = '<div class="st-phase-hd" onclick="togglePhase(\'' + ph.id + '\')">'
+      + '<div class="st-phase-dot" style="background:' + ph.color + '"></div>'
+      + '<div class="st-phase-name">' + escHtml(ph.name) + '</div>'
+      + '<div class="st-phase-meta">' + escHtml(ph.weeks) + '</div>'
+      + '<div class="st-phase-prog" style="color:' + progColor + '">' + pct + '%</div>'
+      + '<div class="st-phase-ch" id="ch-' + ph.id + '">▼</div>'
+      + '</div>'
+      + '<div class="st-phase-body" id="body-' + ph.id + '">'
+      + buildPhaseBody(ph, checked)
+      + '</div>';
+
+    container.appendChild(card);
+  });
+}
+
+function buildPhaseBody(ph, checked) {
+  var html = '';
+  ph.data.forEach(function(wk){
+    html += '<div class="st-wk-lbl">' + escHtml(wk.wk) + '</div>';
+    wk.tasks.forEach(function(t){
+      var done = checked[t.id];
+      html += '<div class="st-task' + (done?' done':'') + '" id="task-row-' + t.id + '">'
+        + '<input type="checkbox" ' + (done?'checked':'') + ' onchange="toggleTask(\'' + t.id + '\',this.checked)">'
+        + '<div class="st-task-body">'
+        + '<div class="st-task-text">' + escHtml(t.text) + '</div>'
+        + (t.link ? '<a class="st-task-link" href="' + t.link + '" target="_blank" rel="noopener">↗ resource</a>' : '')
+        + '</div></div>';
+    });
+    if (wk.asn) {
+      html += '<div class="st-assign"><div class="st-assign-lbl">✦ assignment</div>' + escHtml(wk.asn) + '</div>';
+    }
+  });
+  return html;
+}
+
+function togglePhase(id) {
+  var body = document.getElementById('body-' + id);
+  var ch = document.getElementById('ch-' + id);
+  var open = body.classList.toggle('open');
+  ch.textContent = open ? '▲' : '▼';
+}
+
+// ─────────────────────────────────────────
+//   TOGGLE TASK
+// ─────────────────────────────────────────
+
+function toggleTask(id, val) {
+  setChecked(id, val);
+  // update the row class everywhere it appears
+  document.querySelectorAll('#task-row-' + id).forEach(function(el){
+    el.classList.toggle('done', val);
+  });
+  updateStats();
+  renderToday();
+  // Also update phase progress % in header
+  renderPhasePcts();
+}
+
+function renderPhasePcts() {
+  var checked = getChecked();
+  PLAN.forEach(function(ph){
+    var all = [];
+    ph.data.forEach(function(wk){ wk.tasks.forEach(function(t){ all.push(t.id); }); });
+    var done = all.filter(function(id){ return checked[id]; }).length;
+    var pct = all.length > 0 ? Math.round(done/all.length*100) : 0;
+    var el = document.querySelector('#phase-' + ph.id + ' .st-phase-prog');
+    if (el) {
+      var c = pct===100 ? '#6aad5e' : pct>0 ? '#e8a44a' : 'var(--c-muted)';
+      el.textContent = pct + '%';
+      el.style.color = c;
+    }
+  });
+}
+
+// ─────────────────────────────────────────
+//   NOTIFICATIONS
+// ─────────────────────────────────────────
+
+// Times to notify: 8:00, 13:00, 17:00, 21:00 (local time)
+var NOTIF_HOURS = [8, 13, 17, 21];
+var NOTIF_MESSAGES = [
+  { title: "Good morning! 🌅", body: "Your SLAM study session is waiting. Even 15 min counts." },
+  { title: "Afternoon check-in 📖", body: "Have you done today's SLAM task? One small step." },
+  { title: "Evening session time ⚙️", body: "Last light coding session? Open the tracker." },
+  { title: "Night review 🌙", body: "Before you sleep — what did you learn today?" }
+];
+
+var _swReg = null;
+var _notifTimers = [];
+
+function setupNotifications() {
+  if (!('Notification' in window)) {
+    alert("Sorry, your browser doesn't support notifications.");
+    return;
+  }
+  if (!('serviceWorker' in navigator)) {
+    alert("Service workers not supported — notifications won't work in background. They'll still fire while this tab is open!");
+    startNotifTimers(null);
+    return;
+  }
+
+  Notification.requestPermission().then(function(perm){
+    if (perm === 'granted') {
+      navigator.serviceWorker.register('/study-sw.js').then(function(reg){
+        _swReg = reg;
+        updateNotifBtn('granted');
+        startNotifTimers(reg);
+        showImmediateIfMissed(reg);
+      }).catch(function(err){
+        console.warn('SW registration failed:', err);
+        startNotifTimers(null);
+        updateNotifBtn('granted');
+      });
+    } else {
+      updateNotifBtn('denied');
+    }
+  });
+}
+
+function updateNotifBtn(state) {
+  var btn = document.getElementById('st-notif-btn');
+  if (state === 'granted') {
+    btn.textContent = '🔔 On';
+    btn.className = 'st-btn st-btn-success';
+    btn.onclick = null;
+  } else if (state === 'denied') {
+    btn.textContent = 'Blocked';
+    btn.className = 'st-btn st-btn-warn';
+    document.getElementById('st-notif-times').textContent = 'Notifications blocked — allow them in browser settings';
+  }
+}
+
+function startNotifTimers(reg) {
+  _notifTimers.forEach(clearTimeout);
+  _notifTimers = [];
+
+  var now = new Date();
+  NOTIF_HOURS.forEach(function(h, idx){
+    var target = new Date(now);
+    target.setHours(h, 0, 0, 0);
+    if (target <= now) target.setDate(target.getDate() + 1); // schedule for tomorrow if past
+
+    var ms = target - now;
+    var t = setTimeout(function(){
+      fireNotification(idx, reg);
+      // reschedule for next day
+      var t2 = setInterval(function(){ fireNotification(idx, reg); }, 24*60*60*1000);
+      _notifTimers.push(t2);
+    }, ms);
+    _notifTimers.push(t);
+  });
+}
+
+function fireNotification(idx, reg) {
+  var msg = NOTIF_MESSAGES[idx];
+  // Get today's progress for body
+  var checked = getChecked();
+  var ctx = findTodayTasks();
+  var done = 0, total = 0;
+  if (ctx) {
+    total = ctx.tasks.length;
+    done = ctx.tasks.filter(function(t){ return checked[t.id]; }).length;
+  }
+  var body = msg.body + (total > 0 ? ' (' + done + '/' + total + ' done today)' : '');
+
+  if (reg && reg.active) {
+    reg.active.postMessage({ type:'SHOW_NOTIFICATION', title: msg.title, body: body, tag:'study-'+idx });
+  } else if (Notification.permission === 'granted') {
+    new Notification(msg.title, { body: body, tag: 'study-'+idx });
+  }
+}
+
+function showImmediateIfMissed(reg) {
+  // If it's past 8am and user hasn't been notified today, show a greeting
+  var s = getState();
+  var today = todayStr();
+  if (s.lastGreetDay === today) return;
+  s.lastGreetDay = today;
+  saveState(s);
+
+  var hour = new Date().getHours();
+  if (hour >= 8) {
+    setTimeout(function(){
+      if (reg && reg.active) {
+        reg.active.postMessage({
+          type: 'SHOW_NOTIFICATION',
+          title: "Welcome back! 👋",
+          body: "Your study tracker is loaded. What will you learn today?",
+          tag: 'study-welcome'
+        });
+      }
+    }, 2000);
+  }
+}
+
+// Check on load if SW already registered
+function checkExistingNotifState() {
+  if (Notification.permission === 'granted') {
+    navigator.serviceWorker.getRegistration('/study-sw.js').then(function(reg){
+      if (reg) {
+        _swReg = reg;
+        updateNotifBtn('granted');
+        startNotifTimers(reg);
+      }
+    });
+  } else if (Notification.permission === 'denied') {
+    updateNotifBtn('denied');
+  }
+}
+
+// ─────────────────────────────────────────
+//   UTILS
+// ─────────────────────────────────────────
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+function confirmReset() {
+  if (confirm('Reset ALL progress? This cannot be undone.')) {
+    localStorage.removeItem('st_state');
+    location.reload();
+  }
+}
+
+// ─────────────────────────────────────────
+//   INIT
+// ─────────────────────────────────────────
+
+renderQuote();
+renderPlan();
+renderToday();
+updateStats();
+checkExistingNotifState();
+
+// Auto-open the phase with active tasks
+(function(){
+  var ctx = findTodayTasks();
+  if (!ctx) return;
+  // Find which phase + week this is in
+  for (var pi=0; pi<PLAN.length; pi++){
+    for (var wi=0; wi<PLAN[pi].data.length; wi++){
+      if (PLAN[pi].data[wi].wk === ctx.week){
+        var body = document.getElementById('body-' + PLAN[pi].id);
+        var ch = document.getElementById('ch-' + PLAN[pi].id);
+        if (body && ch) { body.classList.add('open'); ch.textContent = '▲'; }
+        return;
+      }
+    }
+  }
+})();
+</script>
