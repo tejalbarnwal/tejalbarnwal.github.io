@@ -1,6 +1,8 @@
 {
-  "checked": {},
+  "checked": {
+    "w1d1": true
+  },
   "streak": 0,
-  "lastActiveDay": "",
-  "_lastSaved": ""
+  "lastActiveDay": "2026-05-31",
+  "_lastSaved": "2026-05-31T13:02:23.693Z"
 }
